@@ -16,7 +16,7 @@ class CopyrightWidget extends StatelessWidget {
         children: [
           SvgPicture.asset(AppAssets.icCopyright),
           const SizedBox(width: 4),
-          Text(I10n.current.copyright, style: AppStyles.textXsNova.semiBold.neutral),
+          Text(I10n.current.copyright, style: AppStyles.textXs.semiBold.neutral),
         ],
       ),
     );

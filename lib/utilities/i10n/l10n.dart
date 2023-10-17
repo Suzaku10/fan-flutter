@@ -130,16 +130,6 @@ class I10n {
     );
   }
 
-  /// `Masukkan No. KTP anda`
-  String get hint_id_number {
-    return Intl.message(
-      'Masukkan No. KTP anda',
-      name: 'hint_id_number',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Search`
   String get hint_search {
     return Intl.message(
@@ -150,10 +140,20 @@ class I10n {
     );
   }
 
-  /// `Lupa Password anda ?`
+  /// `Masukkan nama anda`
+  String get hint_name {
+    return Intl.message(
+      'Masukkan nama anda',
+      name: 'hint_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Lupa Password anda?`
   String get forgot_password_info {
     return Intl.message(
-      'Lupa Password anda ?',
+      'Lupa Password anda?',
       name: 'forgot_password_info',
       desc: '',
       args: [],
@@ -170,20 +170,20 @@ class I10n {
     );
   }
 
-  /// `Belum punya akun ?`
+  /// `Belum punya akun?`
   String get no_account {
     return Intl.message(
-      'Belum punya akun ?',
+      'Belum punya akun?',
       name: 'no_account',
       desc: '',
       args: [],
     );
   }
 
-  /// `Sudah punya akun ?`
+  /// `Sudah punya akun?`
   String get have_account {
     return Intl.message(
-      'Sudah punya akun ?',
+      'Sudah punya akun?',
       name: 'have_account',
       desc: '',
       args: [],
@@ -230,21 +230,11 @@ class I10n {
     );
   }
 
-  /// `Nama Depan`
-  String get first_name {
+  /// `Nama`
+  String get name {
     return Intl.message(
-      'Nama Depan',
-      name: 'first_name',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Nama Belakang`
-  String get last_name {
-    return Intl.message(
-      'Nama Belakang',
-      name: 'last_name',
+      'Nama',
+      name: 'name',
       desc: '',
       args: [],
     );
@@ -260,181 +250,91 @@ class I10n {
     );
   }
 
-  /// `No. Telpon`
-  String get phone_number {
+  /// `Nama tidak boleh kosong`
+  String get validator_name_empty {
     return Intl.message(
-      'No. Telpon',
-      name: 'phone_number',
+      'Nama tidak boleh kosong',
+      name: 'validator_name_empty',
       desc: '',
       args: [],
     );
   }
 
-  /// `No. KTP`
-  String get id_number {
+  /// `Nama minimal 3 Huruf dan Maksimal 50`
+  String get validator_name_limit {
     return Intl.message(
-      'No. KTP',
-      name: 'id_number',
+      'Nama minimal 3 Huruf dan Maksimal 50',
+      name: 'validator_name_limit',
       desc: '',
       args: [],
     );
   }
 
-  /// `Solusi, `
-  String get banner_home_title {
+  /// `Email tidak boleh kosong`
+  String get validator_email_empty {
     return Intl.message(
-      'Solusi, ',
-      name: 'banner_home_title',
+      'Email tidak boleh kosong',
+      name: 'validator_email_empty',
       desc: '',
       args: [],
     );
   }
 
-  /// `Kesehatan Anda`
-  String get banner_home_title_2 {
+  /// `Email tidak valid`
+  String get validator_email_invalid {
     return Intl.message(
-      'Kesehatan Anda',
-      name: 'banner_home_title_2',
+      'Email tidak valid',
+      name: 'validator_email_invalid',
       desc: '',
       args: [],
     );
   }
 
-  /// `Update informasi seputar kesehatan \nsemua bisa disini !`
-  String get banner_home_subtitle {
+  /// `Password tidak boleh kosong`
+  String get validator_password_empty {
     return Intl.message(
-      'Update informasi seputar kesehatan \nsemua bisa disini !',
-      name: 'banner_home_subtitle',
+      'Password tidak boleh kosong',
+      name: 'validator_password_empty',
       desc: '',
       args: [],
     );
   }
 
-  /// `Selengkapnya`
-  String get more {
+  /// `Password harus lebih dari 8 huruf`
+  String get validator_password_limit {
     return Intl.message(
-      'Selengkapnya',
-      name: 'more',
+      'Password harus lebih dari 8 huruf',
+      name: 'validator_password_limit',
       desc: '',
       args: [],
     );
   }
 
-  /// `Layanan Khusus`
-  String get left_banner_title {
+  /// `Password harus mengandung angka, huruf kecil, dan huruf besar`
+  String get validator_password_invalid {
     return Intl.message(
-      'Layanan Khusus',
-      name: 'left_banner_title',
+      'Password harus mengandung angka, huruf kecil, dan huruf besar',
+      name: 'validator_password_invalid',
       desc: '',
       args: [],
     );
   }
 
-  /// `Tes Covid 19, Cegah Corona\nSedini Mungkin`
-  String get left_banner_subtitle {
+  /// `Konfirmasi Password tidak boleh kosong`
+  String get validator_confirm_password_empty {
     return Intl.message(
-      'Tes Covid 19, Cegah Corona\nSedini Mungkin',
-      name: 'left_banner_subtitle',
+      'Konfirmasi Password tidak boleh kosong',
+      name: 'validator_confirm_password_empty',
       desc: '',
       args: [],
     );
   }
 
-  /// `Daftar Tes`
-  String get register_test {
+  /// `Konfirmasi Password tidak sesuai`
+  String get validator_confirm_password_not_match {
     return Intl.message(
-      'Daftar Tes',
-      name: 'register_test',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Track Pemeriksaan`
-  String get right_banner_title {
-    return Intl.message(
-      'Track Pemeriksaan',
-      name: 'right_banner_title',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Kamu dapat mengecek progress pemeriksaanmu disini`
-  String get right_banner_subtitle {
-    return Intl.message(
-      'Kamu dapat mengecek progress pemeriksaanmu disini',
-      name: 'right_banner_subtitle',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Track`
-  String get track {
-    return Intl.message(
-      'Track',
-      name: 'track',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `All Product`
-  String get all_product {
-    return Intl.message(
-      'All Product',
-      name: 'all_product',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Layanan Kesehatan`
-  String get health_service {
-    return Intl.message(
-      'Layanan Kesehatan',
-      name: 'health_service',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Alat Kesehatan`
-  String get health_equipment {
-    return Intl.message(
-      'Alat Kesehatan',
-      name: 'health_equipment',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Pilih Tipe Layanan Kesehatan Anda`
-  String get choose_service_info {
-    return Intl.message(
-      'Pilih Tipe Layanan Kesehatan Anda',
-      name: 'choose_service_info',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Ready Stock`
-  String get ready_stock {
-    return Intl.message(
-      'Ready Stock',
-      name: 'ready_stock',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Suntik Steril`
-  String get dummy_product {
-    return Intl.message(
-      'Suntik Steril',
-      name: 'dummy_product',
+      'Konfirmasi Password tidak sesuai',
+      name: 'validator_confirm_password_not_match',
       desc: '',
       args: [],
     );

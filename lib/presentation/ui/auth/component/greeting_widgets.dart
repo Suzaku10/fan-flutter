@@ -21,12 +21,12 @@ class GreetingsWidget extends StatelessWidget {
                 TextSpan(
                   text: I10n.current.greetings,
                   children: [
-                    TextSpan(text: I10n.current.welcome, style: AppStyles.displayLgGilroy.bold.primary),
+                    TextSpan(text: I10n.current.welcome, style: AppStyles.displayLg.bold.primary),
                   ],
                 ),
-                style: AppStyles.displayLgGilroy.primary,
+                style: AppStyles.displayLg.primary,
               ),
-              Text(I10n.current.login_info, style: AppStyles.textXsNova.primary),
+              Text(I10n.current.login_info, style: AppStyles.textXs.primary),
             ],
           ),
         ),

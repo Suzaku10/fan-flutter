@@ -25,7 +25,7 @@ class AppButton {
             Expanded(
               child: Text(title,
                   textAlign: TextAlign.center,
-                  style: textSize != null ? AppStyles.textXsGilroy.semiBold.white.copyWith(fontSize: textSize) : AppStyles.textMdGilroy.semiBold.white),
+                  style: textSize != null ? AppStyles.textXs.semiBold.white.copyWith(fontSize: textSize) : AppStyles.textMd.semiBold.white),
             ),
             if (assets != null) SvgPicture.asset(assets)
           ],
@@ -52,7 +52,7 @@ class AppButton {
             Expanded(
               child: Text(title,
                   textAlign: TextAlign.center,
-                  style: textSize != null ? AppStyles.textXsGilroy.semiBold.primary.copyWith(fontSize: textSize) : AppStyles.textMdGilroy.semiBold.primary),
+                  style: textSize != null ? AppStyles.textXs.semiBold.primary.copyWith(fontSize: textSize) : AppStyles.textMd.semiBold.primary),
             ),
             if (assets != null) SvgPicture.asset(assets, color: AppColors.primary, width: textSize, height: textSize)
           ],

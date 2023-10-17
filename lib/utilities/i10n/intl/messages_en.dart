@@ -22,63 +22,53 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "all_product": MessageLookupByLibrary.simpleMessage("All Product"),
-        "banner_home_subtitle": MessageLookupByLibrary.simpleMessage(
-            "Update informasi seputar kesehatan \nsemua bisa disini !"),
-        "banner_home_title": MessageLookupByLibrary.simpleMessage("Solusi, "),
-        "banner_home_title_2":
-            MessageLookupByLibrary.simpleMessage("Kesehatan Anda"),
-        "choose_service_info": MessageLookupByLibrary.simpleMessage(
-            "Pilih Tipe Layanan Kesehatan Anda"),
         "confirm_password":
             MessageLookupByLibrary.simpleMessage("Konfirmasi Password"),
         "copyright":
             MessageLookupByLibrary.simpleMessage("SZK. all right reserved."),
-        "dummy_product": MessageLookupByLibrary.simpleMessage("Suntik Steril"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
-        "first_name": MessageLookupByLibrary.simpleMessage("Nama Depan"),
         "forgot_password_info":
-            MessageLookupByLibrary.simpleMessage("Lupa Password anda ?"),
+            MessageLookupByLibrary.simpleMessage("Lupa Password anda?"),
         "greetings": MessageLookupByLibrary.simpleMessage("Hei,"),
         "have_account":
-            MessageLookupByLibrary.simpleMessage("Sudah punya akun ?"),
-        "health_equipment":
-            MessageLookupByLibrary.simpleMessage("Alat Kesehatan"),
-        "health_service":
-            MessageLookupByLibrary.simpleMessage("Layanan Kesehatan"),
+            MessageLookupByLibrary.simpleMessage("Sudah punya akun?"),
         "hint_confirmation_password":
             MessageLookupByLibrary.simpleMessage("Konfirmasi password anda"),
         "hint_email":
             MessageLookupByLibrary.simpleMessage("Masukkan email anda"),
-        "hint_id_number":
-            MessageLookupByLibrary.simpleMessage("Masukkan No. KTP anda"),
+        "hint_name": MessageLookupByLibrary.simpleMessage("Masukkan nama anda"),
         "hint_password":
             MessageLookupByLibrary.simpleMessage("Masukkan password anda"),
         "hint_search": MessageLookupByLibrary.simpleMessage("Search"),
-        "id_number": MessageLookupByLibrary.simpleMessage("No. KTP"),
-        "last_name": MessageLookupByLibrary.simpleMessage("Nama Belakang"),
-        "left_banner_subtitle": MessageLookupByLibrary.simpleMessage(
-            "Tes Covid 19, Cegah Corona\nSedini Mungkin"),
-        "left_banner_title":
-            MessageLookupByLibrary.simpleMessage("Layanan Khusus"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
         "login_info": MessageLookupByLibrary.simpleMessage(
             "Silahkan login untuk melanjutkan"),
         "login_now": MessageLookupByLibrary.simpleMessage("Login sekarang"),
-        "more": MessageLookupByLibrary.simpleMessage("Selengkapnya"),
-        "no_account":
-            MessageLookupByLibrary.simpleMessage("Belum punya akun ?"),
+        "name": MessageLookupByLibrary.simpleMessage("Nama"),
+        "no_account": MessageLookupByLibrary.simpleMessage("Belum punya akun?"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
-        "phone_number": MessageLookupByLibrary.simpleMessage("No. Telpon"),
-        "ready_stock": MessageLookupByLibrary.simpleMessage("Ready Stock"),
         "register": MessageLookupByLibrary.simpleMessage("Register"),
         "register_now": MessageLookupByLibrary.simpleMessage("Daftar sekarang"),
-        "register_test": MessageLookupByLibrary.simpleMessage("Daftar Tes"),
-        "right_banner_subtitle": MessageLookupByLibrary.simpleMessage(
-            "Kamu dapat mengecek progress pemeriksaanmu disini"),
-        "right_banner_title":
-            MessageLookupByLibrary.simpleMessage("Track Pemeriksaan"),
-        "track": MessageLookupByLibrary.simpleMessage("Track"),
+        "validator_confirm_password_empty":
+            MessageLookupByLibrary.simpleMessage(
+                "Konfirmasi Password tidak boleh kosong"),
+        "validator_confirm_password_not_match":
+            MessageLookupByLibrary.simpleMessage(
+                "Konfirmasi Password tidak sesuai"),
+        "validator_email_empty":
+            MessageLookupByLibrary.simpleMessage("Email tidak boleh kosong"),
+        "validator_email_invalid":
+            MessageLookupByLibrary.simpleMessage("Email tidak valid"),
+        "validator_name_empty":
+            MessageLookupByLibrary.simpleMessage("Nama tidak boleh kosong"),
+        "validator_name_limit": MessageLookupByLibrary.simpleMessage(
+            "Nama minimal 3 Huruf dan Maksimal 50"),
+        "validator_password_empty":
+            MessageLookupByLibrary.simpleMessage("Password tidak boleh kosong"),
+        "validator_password_invalid": MessageLookupByLibrary.simpleMessage(
+            "Password harus mengandung angka, huruf kecil, dan huruf besar"),
+        "validator_password_limit": MessageLookupByLibrary.simpleMessage(
+            "Password harus lebih dari 8 huruf"),
         "welcome": MessageLookupByLibrary.simpleMessage("Selamat Datang")
       };
 }
