@@ -339,6 +339,16 @@ class I10n {
       args: [],
     );
   }
+
+  /// `Kirim`
+  String get send {
+    return Intl.message(
+      'Kirim',
+      name: 'send',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<I10n> {

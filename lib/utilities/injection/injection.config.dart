@@ -13,9 +13,12 @@ import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 import 'package:shared_preferences/shared_preferences.dart' as _i4;
 
+import '../../application/auth/auth_bloc.dart' as _i11;
+import '../../domain/interface/i_auth.dart' as _i9;
 import '../../domain/interface/i_prefs_service.dart' as _i5;
 import '../../infrastructure/core/prefs_service.dart' as _i6;
-import '../../infrastructure/core/register_module.dart' as _i9;
+import '../../infrastructure/core/register_module.dart' as _i12;
+import '../../infrastructure/repository/auth_repository.dart' as _i10;
 import '../router/app_router.dart' as _i8;
 import '../router/guards.dart' as _i7;
 
@@ -41,8 +44,13 @@ extension GetItInjectableX on _i1.GetIt {
     gh.factory<_i7.AppRouteGuard>(
         () => _i7.AppRouteGuard(gh<_i5.IPrefsService>()));
     gh.factory<_i8.AppRouter>(() => _i8.AppRouter(gh<_i7.AppRouteGuard>()));
+    gh.lazySingleton<_i9.IAuth>(() => _i10.AuthRepository(
+          gh<_i5.IPrefsService>(),
+          gh<_i3.FirebaseAuth>(),
+        ));
+    gh.factory<_i11.AuthBloc>(() => _i11.AuthBloc(gh<_i9.IAuth>()));
     return this;
   }
 }
 
-class _$RegisterModule extends _i9.RegisterModule {}
+class _$RegisterModule extends _i12.RegisterModule {}

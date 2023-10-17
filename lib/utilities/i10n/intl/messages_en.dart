@@ -49,6 +49,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "register": MessageLookupByLibrary.simpleMessage("Register"),
         "register_now": MessageLookupByLibrary.simpleMessage("Daftar sekarang"),
+        "send": MessageLookupByLibrary.simpleMessage("Kirim"),
         "validator_confirm_password_empty":
             MessageLookupByLibrary.simpleMessage(
                 "Konfirmasi Password tidak boleh kosong"),
