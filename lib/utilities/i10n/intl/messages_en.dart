@@ -22,11 +22,13 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "confirm": MessageLookupByLibrary.simpleMessage("Silakan Konfirmasi"),
         "confirm_password":
             MessageLookupByLibrary.simpleMessage("Konfirmasi Password"),
         "copyright":
             MessageLookupByLibrary.simpleMessage("SZK. all right reserved."),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
+        "empty_data": MessageLookupByLibrary.simpleMessage("Tidak ada data"),
         "forgot_password_info":
             MessageLookupByLibrary.simpleMessage("Lupa Password anda?"),
         "greetings": MessageLookupByLibrary.simpleMessage("Hei,"),
@@ -40,11 +42,17 @@ class MessageLookup extends MessageLookupByLibrary {
         "hint_password":
             MessageLookupByLibrary.simpleMessage("Masukkan password anda"),
         "hint_search": MessageLookupByLibrary.simpleMessage("Search"),
+        "list_of_users":
+            MessageLookupByLibrary.simpleMessage("Daftar Semua Pengguna"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
         "login_info": MessageLookupByLibrary.simpleMessage(
             "Silahkan login untuk melanjutkan"),
         "login_now": MessageLookupByLibrary.simpleMessage("Login sekarang"),
+        "logout": MessageLookupByLibrary.simpleMessage("Keluar"),
+        "logout_warning": MessageLookupByLibrary.simpleMessage(
+            "Apakah Anda yakin untuk keluar?"),
         "name": MessageLookupByLibrary.simpleMessage("Nama"),
+        "no": MessageLookupByLibrary.simpleMessage("Tidak"),
         "no_account": MessageLookupByLibrary.simpleMessage("Belum punya akun?"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "register": MessageLookupByLibrary.simpleMessage("Register"),
@@ -70,6 +78,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Password harus mengandung angka, huruf kecil, dan huruf besar"),
         "validator_password_limit": MessageLookupByLibrary.simpleMessage(
             "Password harus lebih dari 8 huruf"),
-        "welcome": MessageLookupByLibrary.simpleMessage("Selamat Datang")
+        "welcome": MessageLookupByLibrary.simpleMessage("Selamat Datang"),
+        "yes": MessageLookupByLibrary.simpleMessage("Ya")
       };
 }

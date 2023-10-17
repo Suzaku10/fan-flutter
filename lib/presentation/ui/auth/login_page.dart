@@ -12,6 +12,7 @@ import 'package:fan_flutter/presentation/ui/auth/component/greeting_widgets.dart
 import 'package:fan_flutter/utilities/i10n/l10n.dart';
 import 'package:fan_flutter/utilities/injection/injection.dart';
 import 'package:fan_flutter/utilities/loader.dart';
+import 'package:fan_flutter/utilities/router/app_router.dart';
 import 'package:fan_flutter/utilities/validator/input_validator_utils.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
@@ -44,7 +45,10 @@ class _LoginPageState extends State<LoginPage> {
               state.maybeMap(
                 orElse: () => '',
                 loading: (_) => LoaderUtils.showProcessLoading(),
-                loginSuccess: (_) => context.router.replaceAll([]),
+                loginSuccess: (_) {
+                  LoaderUtils.dismissLoading();
+                  context.router.replaceAll([const HomeRoute()]);
+                },
                 showMessage: (e) => LoaderUtils.showMessage(e.reason),
               );
             },

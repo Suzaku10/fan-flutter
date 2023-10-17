@@ -28,5 +28,12 @@
     "validator_password_invalid": "Password harus mengandung angka, huruf kecil, dan huruf besar",
     "validator_confirm_password_empty": "Konfirmasi Password tidak boleh kosong",
     "validator_confirm_password_not_match": "Konfirmasi Password tidak sesuai",
-    "send": "Kirim"
+    "send": "Kirim",
+    "list_of_users": "Daftar Semua Pengguna",
+    "empty_data": "Tidak ada data",
+    "logout": "Keluar",
+    "yes": "Ya",
+    "no": "Tidak",
+    "logout_warning": "Apakah Anda yakin untuk keluar?",
+    "confirm": "Silakan Konfirmasi"
 }

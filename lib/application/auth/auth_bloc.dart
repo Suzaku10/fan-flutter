@@ -23,6 +23,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         emit(const _Loading());
         try {
           await _auth.doLogin(params: v.params);
+          await _auth.saveCredential();
           emit(const _LoginSuccess());
         } catch (e) {
           emit(_ShowMessage(e.toString()));
@@ -31,7 +32,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         emit(const _Loading());
         try {
           await _auth.doLogout();
-          emit(const _LoginSuccess());
+          emit(const _LogoutSuccess());
         } catch (e) {
           emit(_ShowMessage(e.toString()));
         }

@@ -25,7 +25,7 @@ class AuthRepository implements IAuth {
   Future<bool> doLogout() async {
     try {
       await _auth.signOut();
-      _prefs.saveLoggedInStatus(false);
+      await _prefs.saveLoggedInStatus(false);
       return true;
     } catch (e) {
       rethrow;

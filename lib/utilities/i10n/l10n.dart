@@ -349,6 +349,76 @@ class I10n {
       args: [],
     );
   }
+
+  /// `Daftar Semua Pengguna`
+  String get list_of_users {
+    return Intl.message(
+      'Daftar Semua Pengguna',
+      name: 'list_of_users',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tidak ada data`
+  String get empty_data {
+    return Intl.message(
+      'Tidak ada data',
+      name: 'empty_data',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Keluar`
+  String get logout {
+    return Intl.message(
+      'Keluar',
+      name: 'logout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ya`
+  String get yes {
+    return Intl.message(
+      'Ya',
+      name: 'yes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tidak`
+  String get no {
+    return Intl.message(
+      'Tidak',
+      name: 'no',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Apakah Anda yakin untuk keluar?`
+  String get logout_warning {
+    return Intl.message(
+      'Apakah Anda yakin untuk keluar?',
+      name: 'logout_warning',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Silakan Konfirmasi`
+  String get confirm {
+    return Intl.message(
+      'Silakan Konfirmasi',
+      name: 'confirm',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<I10n> {
