@@ -11,12 +11,11 @@ import 'package:fan_flutter/presentation/ui/auth/component/greeting_widgets.dart
 import 'package:fan_flutter/utilities/i10n/l10n.dart';
 import 'package:fan_flutter/utilities/injection/injection.dart';
 import 'package:fan_flutter/utilities/loader.dart';
+import 'package:fan_flutter/utilities/router/app_router.dart';
 import 'package:fan_flutter/utilities/validator/input_validator_utils.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 @RoutePage()
@@ -47,7 +46,10 @@ class _RegisterPageState extends State<RegisterPage> {
               state.maybeMap(
                 orElse: () => '',
                 loading: (_) => LoaderUtils.showProcessLoading(),
-                registerSuccess: (v) => context.router.pushNamed(AppPages.roots),
+                registerSuccess: (v) {
+                  LoaderUtils.dismissLoading();
+                  context.router.replaceAll([const HomeRoute()]);
+                },
                 showMessage: (v) => LoaderUtils.showMessage(v.reason),
               );
             },
