@@ -23,4 +23,15 @@ class UserParams {
   factory UserParams.fromJson(Map<String, dynamic> json) => _$UserParamsFromJson(json);
 
   Map<String, dynamic> toJson() => _$UserParamsToJson(this);
+
+  UserParams copyWith({bool? isVerified}) {
+    return UserParams(
+      id: id,
+      name: name,
+      email: email,
+      createdAt: createdAt,
+      updatedAt: DateTime.now().microsecondsSinceEpoch,
+      isVerified: isVerified ?? this.isVerified,
+    );
+  }
 }

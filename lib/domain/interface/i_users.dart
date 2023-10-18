@@ -7,4 +7,5 @@ import 'package:fan_flutter/domain/responses/users_responses.dart';
 abstract interface class IUsers {
   Future<QuerySnapshot<UsersResponses>> fetchUsers({required FilterStatus filter});
   Future<void> insertUser({required UserParams params});
+  Future<void> updateUser({required UserParams params});
 }

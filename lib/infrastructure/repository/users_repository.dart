@@ -42,4 +42,13 @@ class UsersRepository implements IUsers {
       rethrow;
     }
   }
+
+  @override
+  Future<void> updateUser({required UserParams params}) async {
+    try {
+      await _store.collection(AppStrings.appCollection).doc(params.id).update(params.toJson());
+    } catch (e) {
+      rethrow;
+    }
+  }
 }

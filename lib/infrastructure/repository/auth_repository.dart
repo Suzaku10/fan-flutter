@@ -80,4 +80,13 @@ class AuthRepository implements IAuth {
        rethrow;
      }
   }
+
+  @override
+  Future<User?> currentUser() async {
+    try {
+      return _auth.currentUser;
+    } catch (e) {
+      rethrow;
+    }
+  }
 }
