@@ -58,6 +58,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "register": MessageLookupByLibrary.simpleMessage("Register"),
         "register_now": MessageLookupByLibrary.simpleMessage("Daftar sekarang"),
         "send": MessageLookupByLibrary.simpleMessage("Kirim"),
+        "unverified": MessageLookupByLibrary.simpleMessage("Unverified"),
         "validator_confirm_password_empty":
             MessageLookupByLibrary.simpleMessage(
                 "Konfirmasi Password tidak boleh kosong"),
@@ -78,6 +79,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Password harus mengandung angka, huruf kecil, dan huruf besar"),
         "validator_password_limit": MessageLookupByLibrary.simpleMessage(
             "Password harus lebih dari 8 huruf"),
+        "verified": MessageLookupByLibrary.simpleMessage("Verified"),
         "welcome": MessageLookupByLibrary.simpleMessage("Selamat Datang"),
         "yes": MessageLookupByLibrary.simpleMessage("Ya")
       };

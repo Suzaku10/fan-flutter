@@ -4,6 +4,7 @@ import 'package:fan_flutter/application/users/users_bloc.dart';
 import 'package:fan_flutter/domain/constant/app_enum.dart';
 import 'package:fan_flutter/domain/constant/app_styles.dart';
 import 'package:fan_flutter/presentation/components/app_dialog.dart';
+import 'package:fan_flutter/presentation/ui/home/component/account_item.dart';
 import 'package:fan_flutter/utilities/i10n/l10n.dart';
 import 'package:fan_flutter/utilities/injection/injection.dart';
 import 'package:fan_flutter/utilities/loader.dart';
@@ -73,11 +74,21 @@ class _HomePageState extends State<HomePage> {
                           textAlign: TextAlign.center),
                     );
                   }
-                  return ListView.separated(
-                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-                    itemCount: e.data.length,
-                    itemBuilder: (BuildContext context, int index) => Text(e.data[index].email ?? ""),
-                    separatorBuilder: (BuildContext context, int index) => const SizedBox(height: 8),
+                  return Column(
+                    children: [
+                       Align(
+                        alignment: Alignment.bottomRight,
+                        child: IconButton(onPressed: () {}, icon: const Icon(Icons.filter_list_sharp)),
+                      ),
+                      Expanded(
+                        child: ListView.separated(
+                          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+                          itemCount: e.data.length,
+                          itemBuilder: (BuildContext context, int index) => AccountItem(data: e.data[index]),
+                          separatorBuilder: (BuildContext context, int index) => const SizedBox(height: 8),
+                        ),
+                      ),
+                    ],
                   );
                 });
           },

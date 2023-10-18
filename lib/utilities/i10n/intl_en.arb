@@ -35,5 +35,7 @@
     "yes": "Ya",
     "no": "Tidak",
     "logout_warning": "Apakah Anda yakin untuk keluar?",
-    "confirm": "Silakan Konfirmasi"
+    "confirm": "Silakan Konfirmasi",
+    "verified": "Verified",
+    "unverified": "Unverified"
 }

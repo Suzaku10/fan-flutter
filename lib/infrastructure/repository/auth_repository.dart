@@ -63,9 +63,10 @@ class AuthRepository implements IAuth {
   }
 
   @override
-  Future<void> updateDisplayName({required String name}) async {
+  Future<bool> updateDisplayName({required String name}) async {
     try {
       await _auth.currentUser?.updateDisplayName(name);
+      return true;
     } catch (e) {
       rethrow;
     }

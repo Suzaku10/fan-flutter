@@ -11,7 +11,7 @@ abstract interface class IAuth {
 
   Future<bool> sendVerificationEmail();
 
-  Future<void> updateDisplayName({required String name});
+  Future<bool> updateDisplayName({required String name});
 
   Future<void> resetPassword({required String email});
 }

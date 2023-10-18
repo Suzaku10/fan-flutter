@@ -9,6 +9,7 @@ List<UserParams> userFromResponses(QuerySnapshot<UsersResponses> response) {
     result.add(
       UserParams(
         id: item.id,
+        name: data.name ?? "",
         email: data.email ?? "",
         isVerified: data.isVerified,
         createdAt: data.createdAt,

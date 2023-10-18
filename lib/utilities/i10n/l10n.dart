@@ -419,6 +419,26 @@ class I10n {
       args: [],
     );
   }
+
+  /// `Verified`
+  String get verified {
+    return Intl.message(
+      'Verified',
+      name: 'verified',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Unverified`
+  String get unverified {
+    return Intl.message(
+      'Unverified',
+      name: 'unverified',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<I10n> {
