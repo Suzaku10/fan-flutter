@@ -60,6 +60,7 @@ class _HomePageState extends State<HomePage> {
             },
             loading: (e) => LoaderUtils.showProcessLoading(),
             fetchSuccess: (_) => LoaderUtils.dismissLoading(),
+            showMessage: (e) => LoaderUtils.showMessage(e),
           ),
           builder: (context, state) {
             return state.maybeMap(

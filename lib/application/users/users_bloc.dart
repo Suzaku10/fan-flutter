@@ -25,7 +25,7 @@ class UsersBloc extends Bloc<UsersEvent, UsersState> {
         try {
           final result = await _users.fetchUsers(filter: v.status);
           final data = await _auth.currentUser();
-          if (data?.emailVerified == true) {
+          if (data?.emailVerified == true && userFromResponses(result).any((element) => element.email == (data?.email ?? ''))) {
             await _users.updateUser(
               params: userFromResponses(result).firstWhere((element) => element.email == (data?.email ?? '')).copyWith(
                     isVerified: data?.emailVerified ?? false,
