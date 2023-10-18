@@ -439,6 +439,16 @@ class I10n {
       args: [],
     );
   }
+
+  /// `Silakan Relog untuk setelah verifikasi email`
+  String get verified_info {
+    return Intl.message(
+      'Silakan Relog untuk setelah verifikasi email',
+      name: 'verified_info',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<I10n> {

@@ -32,9 +32,9 @@ class UsersBloc extends Bloc<UsersEvent, UsersState> {
                   ),
             );
             final updated = await _users.fetchUsers(filter: v.status);
-            emit(UsersState.fetchSuccess(userFromResponses(updated), v.status));
+            emit(UsersState.fetchSuccess(userFromResponses(updated), v.status, data?.emailVerified ?? false));
           } else {
-            emit(UsersState.fetchSuccess(userFromResponses(result), v.status));
+            emit(UsersState.fetchSuccess(userFromResponses(result), v.status, data?.emailVerified ?? false));
           }
         } catch (e) {
           emit(_ShowMessage(e.toString()));

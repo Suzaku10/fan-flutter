@@ -80,6 +80,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "validator_password_limit": MessageLookupByLibrary.simpleMessage(
             "Password harus lebih dari 8 huruf"),
         "verified": MessageLookupByLibrary.simpleMessage("Verified"),
+        "verified_info": MessageLookupByLibrary.simpleMessage(
+            "Silakan Relog untuk setelah verifikasi email"),
         "welcome": MessageLookupByLibrary.simpleMessage("Selamat Datang"),
         "yes": MessageLookupByLibrary.simpleMessage("Ya")
       };

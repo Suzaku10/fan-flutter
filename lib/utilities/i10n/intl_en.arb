@@ -37,5 +37,6 @@
     "logout_warning": "Apakah Anda yakin untuk keluar?",
     "confirm": "Silakan Konfirmasi",
     "verified": "Verified",
-    "unverified": "Unverified"
+    "unverified": "Unverified",
+    "verified_info": "Silakan Relog untuk setelah verifikasi email"
 }

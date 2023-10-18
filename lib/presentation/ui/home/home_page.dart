@@ -67,7 +67,9 @@ class _HomePageState extends State<HomePage> {
                 orElse: () => Container(),
                 fetchSuccess: (e) {
                   return Column(
+                    mainAxisSize: MainAxisSize.min,
                     children: [
+                      if (!e.isVerified) Text(I10n.current.verified_info, style: AppStyles.textLg),
                       Align(
                         alignment: Alignment.bottomRight,
                         child: IconButton(

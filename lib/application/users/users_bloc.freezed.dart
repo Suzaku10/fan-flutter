@@ -254,7 +254,8 @@ mixin _$UsersState {
     required TResult Function() initial,
     required TResult Function(String reason) showMessage,
     required TResult Function() loading,
-    required TResult Function(List<UserParams> data, FilterStatus lastFilter)
+    required TResult Function(
+            List<UserParams> data, FilterStatus lastFilter, bool isVerified)
         fetchSuccess,
   }) =>
       throw _privateConstructorUsedError;
@@ -263,7 +264,8 @@ mixin _$UsersState {
     TResult? Function()? initial,
     TResult? Function(String reason)? showMessage,
     TResult? Function()? loading,
-    TResult? Function(List<UserParams> data, FilterStatus lastFilter)?
+    TResult? Function(
+            List<UserParams> data, FilterStatus lastFilter, bool isVerified)?
         fetchSuccess,
   }) =>
       throw _privateConstructorUsedError;
@@ -272,7 +274,8 @@ mixin _$UsersState {
     TResult Function()? initial,
     TResult Function(String reason)? showMessage,
     TResult Function()? loading,
-    TResult Function(List<UserParams> data, FilterStatus lastFilter)?
+    TResult Function(
+            List<UserParams> data, FilterStatus lastFilter, bool isVerified)?
         fetchSuccess,
     required TResult orElse(),
   }) =>
@@ -363,7 +366,8 @@ class _$InitialImpl implements _Initial {
     required TResult Function() initial,
     required TResult Function(String reason) showMessage,
     required TResult Function() loading,
-    required TResult Function(List<UserParams> data, FilterStatus lastFilter)
+    required TResult Function(
+            List<UserParams> data, FilterStatus lastFilter, bool isVerified)
         fetchSuccess,
   }) {
     return initial();
@@ -375,7 +379,8 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? initial,
     TResult? Function(String reason)? showMessage,
     TResult? Function()? loading,
-    TResult? Function(List<UserParams> data, FilterStatus lastFilter)?
+    TResult? Function(
+            List<UserParams> data, FilterStatus lastFilter, bool isVerified)?
         fetchSuccess,
   }) {
     return initial?.call();
@@ -387,7 +392,8 @@ class _$InitialImpl implements _Initial {
     TResult Function()? initial,
     TResult Function(String reason)? showMessage,
     TResult Function()? loading,
-    TResult Function(List<UserParams> data, FilterStatus lastFilter)?
+    TResult Function(
+            List<UserParams> data, FilterStatus lastFilter, bool isVerified)?
         fetchSuccess,
     required TResult orElse(),
   }) {
@@ -506,7 +512,8 @@ class _$ShowMessageImpl implements _ShowMessage {
     required TResult Function() initial,
     required TResult Function(String reason) showMessage,
     required TResult Function() loading,
-    required TResult Function(List<UserParams> data, FilterStatus lastFilter)
+    required TResult Function(
+            List<UserParams> data, FilterStatus lastFilter, bool isVerified)
         fetchSuccess,
   }) {
     return showMessage(reason);
@@ -518,7 +525,8 @@ class _$ShowMessageImpl implements _ShowMessage {
     TResult? Function()? initial,
     TResult? Function(String reason)? showMessage,
     TResult? Function()? loading,
-    TResult? Function(List<UserParams> data, FilterStatus lastFilter)?
+    TResult? Function(
+            List<UserParams> data, FilterStatus lastFilter, bool isVerified)?
         fetchSuccess,
   }) {
     return showMessage?.call(reason);
@@ -530,7 +538,8 @@ class _$ShowMessageImpl implements _ShowMessage {
     TResult Function()? initial,
     TResult Function(String reason)? showMessage,
     TResult Function()? loading,
-    TResult Function(List<UserParams> data, FilterStatus lastFilter)?
+    TResult Function(
+            List<UserParams> data, FilterStatus lastFilter, bool isVerified)?
         fetchSuccess,
     required TResult orElse(),
   }) {
@@ -628,7 +637,8 @@ class _$LoadingImpl implements _Loading {
     required TResult Function() initial,
     required TResult Function(String reason) showMessage,
     required TResult Function() loading,
-    required TResult Function(List<UserParams> data, FilterStatus lastFilter)
+    required TResult Function(
+            List<UserParams> data, FilterStatus lastFilter, bool isVerified)
         fetchSuccess,
   }) {
     return loading();
@@ -640,7 +650,8 @@ class _$LoadingImpl implements _Loading {
     TResult? Function()? initial,
     TResult? Function(String reason)? showMessage,
     TResult? Function()? loading,
-    TResult? Function(List<UserParams> data, FilterStatus lastFilter)?
+    TResult? Function(
+            List<UserParams> data, FilterStatus lastFilter, bool isVerified)?
         fetchSuccess,
   }) {
     return loading?.call();
@@ -652,7 +663,8 @@ class _$LoadingImpl implements _Loading {
     TResult Function()? initial,
     TResult Function(String reason)? showMessage,
     TResult Function()? loading,
-    TResult Function(List<UserParams> data, FilterStatus lastFilter)?
+    TResult Function(
+            List<UserParams> data, FilterStatus lastFilter, bool isVerified)?
         fetchSuccess,
     required TResult orElse(),
   }) {
@@ -710,7 +722,7 @@ abstract class _$$FetchSuccessImplCopyWith<$Res> {
           _$FetchSuccessImpl value, $Res Function(_$FetchSuccessImpl) then) =
       __$$FetchSuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<UserParams> data, FilterStatus lastFilter});
+  $Res call({List<UserParams> data, FilterStatus lastFilter, bool isVerified});
 }
 
 /// @nodoc
@@ -726,6 +738,7 @@ class __$$FetchSuccessImplCopyWithImpl<$Res>
   $Res call({
     Object? data = null,
     Object? lastFilter = null,
+    Object? isVerified = null,
   }) {
     return _then(_$FetchSuccessImpl(
       null == data
@@ -736,6 +749,10 @@ class __$$FetchSuccessImplCopyWithImpl<$Res>
           ? _value.lastFilter
           : lastFilter // ignore: cast_nullable_to_non_nullable
               as FilterStatus,
+      null == isVerified
+          ? _value.isVerified
+          : isVerified // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -743,7 +760,8 @@ class __$$FetchSuccessImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$FetchSuccessImpl implements _FetchSuccess {
-  const _$FetchSuccessImpl(final List<UserParams> data, this.lastFilter)
+  const _$FetchSuccessImpl(
+      final List<UserParams> data, this.lastFilter, this.isVerified)
       : _data = data;
 
   final List<UserParams> _data;
@@ -756,10 +774,12 @@ class _$FetchSuccessImpl implements _FetchSuccess {
 
   @override
   final FilterStatus lastFilter;
+  @override
+  final bool isVerified;
 
   @override
   String toString() {
-    return 'UsersState.fetchSuccess(data: $data, lastFilter: $lastFilter)';
+    return 'UsersState.fetchSuccess(data: $data, lastFilter: $lastFilter, isVerified: $isVerified)';
   }
 
   @override
@@ -769,12 +789,14 @@ class _$FetchSuccessImpl implements _FetchSuccess {
             other is _$FetchSuccessImpl &&
             const DeepCollectionEquality().equals(other._data, _data) &&
             (identical(other.lastFilter, lastFilter) ||
-                other.lastFilter == lastFilter));
+                other.lastFilter == lastFilter) &&
+            (identical(other.isVerified, isVerified) ||
+                other.isVerified == isVerified));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_data), lastFilter);
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(_data), lastFilter, isVerified);
 
   @JsonKey(ignore: true)
   @override
@@ -788,10 +810,11 @@ class _$FetchSuccessImpl implements _FetchSuccess {
     required TResult Function() initial,
     required TResult Function(String reason) showMessage,
     required TResult Function() loading,
-    required TResult Function(List<UserParams> data, FilterStatus lastFilter)
+    required TResult Function(
+            List<UserParams> data, FilterStatus lastFilter, bool isVerified)
         fetchSuccess,
   }) {
-    return fetchSuccess(data, lastFilter);
+    return fetchSuccess(data, lastFilter, isVerified);
   }
 
   @override
@@ -800,10 +823,11 @@ class _$FetchSuccessImpl implements _FetchSuccess {
     TResult? Function()? initial,
     TResult? Function(String reason)? showMessage,
     TResult? Function()? loading,
-    TResult? Function(List<UserParams> data, FilterStatus lastFilter)?
+    TResult? Function(
+            List<UserParams> data, FilterStatus lastFilter, bool isVerified)?
         fetchSuccess,
   }) {
-    return fetchSuccess?.call(data, lastFilter);
+    return fetchSuccess?.call(data, lastFilter, isVerified);
   }
 
   @override
@@ -812,12 +836,13 @@ class _$FetchSuccessImpl implements _FetchSuccess {
     TResult Function()? initial,
     TResult Function(String reason)? showMessage,
     TResult Function()? loading,
-    TResult Function(List<UserParams> data, FilterStatus lastFilter)?
+    TResult Function(
+            List<UserParams> data, FilterStatus lastFilter, bool isVerified)?
         fetchSuccess,
     required TResult orElse(),
   }) {
     if (fetchSuccess != null) {
-      return fetchSuccess(data, lastFilter);
+      return fetchSuccess(data, lastFilter, isVerified);
     }
     return orElse();
   }
@@ -862,11 +887,13 @@ class _$FetchSuccessImpl implements _FetchSuccess {
 
 abstract class _FetchSuccess implements UsersState {
   const factory _FetchSuccess(
-          final List<UserParams> data, final FilterStatus lastFilter) =
-      _$FetchSuccessImpl;
+      final List<UserParams> data,
+      final FilterStatus lastFilter,
+      final bool isVerified) = _$FetchSuccessImpl;
 
   List<UserParams> get data;
   FilterStatus get lastFilter;
+  bool get isVerified;
   @JsonKey(ignore: true)
   _$$FetchSuccessImplCopyWith<_$FetchSuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;
