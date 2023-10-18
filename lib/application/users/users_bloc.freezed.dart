@@ -17,19 +17,21 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$UsersEvent {
   FilterStatus get status => throw _privateConstructorUsedError;
+  List<UserParams> get data => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(FilterStatus status) onFetch,
+    required TResult Function(FilterStatus status, List<UserParams> data)
+        onFetch,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(FilterStatus status)? onFetch,
+    TResult? Function(FilterStatus status, List<UserParams> data)? onFetch,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(FilterStatus status)? onFetch,
+    TResult Function(FilterStatus status, List<UserParams> data)? onFetch,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -61,7 +63,7 @@ abstract class $UsersEventCopyWith<$Res> {
           UsersEvent value, $Res Function(UsersEvent) then) =
       _$UsersEventCopyWithImpl<$Res, UsersEvent>;
   @useResult
-  $Res call({FilterStatus status});
+  $Res call({FilterStatus status, List<UserParams> data});
 }
 
 /// @nodoc
@@ -78,12 +80,17 @@ class _$UsersEventCopyWithImpl<$Res, $Val extends UsersEvent>
   @override
   $Res call({
     Object? status = null,
+    Object? data = null,
   }) {
     return _then(_value.copyWith(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as FilterStatus,
+      data: null == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as List<UserParams>,
     ) as $Val);
   }
 }
@@ -96,7 +103,7 @@ abstract class _$$OnFetchImplCopyWith<$Res>
       __$$OnFetchImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({FilterStatus status});
+  $Res call({FilterStatus status, List<UserParams> data});
 }
 
 /// @nodoc
@@ -111,12 +118,17 @@ class __$$OnFetchImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? status = null,
+    Object? data = null,
   }) {
     return _then(_$OnFetchImpl(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as FilterStatus,
+      data: null == data
+          ? _value._data
+          : data // ignore: cast_nullable_to_non_nullable
+              as List<UserParams>,
     ));
   }
 }
@@ -124,14 +136,23 @@ class __$$OnFetchImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$OnFetchImpl implements _OnFetch {
-  const _$OnFetchImpl({required this.status});
+  const _$OnFetchImpl(
+      {required this.status, required final List<UserParams> data})
+      : _data = data;
 
   @override
   final FilterStatus status;
+  final List<UserParams> _data;
+  @override
+  List<UserParams> get data {
+    if (_data is EqualUnmodifiableListView) return _data;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_data);
+  }
 
   @override
   String toString() {
-    return 'UsersEvent.onFetch(status: $status)';
+    return 'UsersEvent.onFetch(status: $status, data: $data)';
   }
 
   @override
@@ -139,11 +160,13 @@ class _$OnFetchImpl implements _OnFetch {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$OnFetchImpl &&
-            (identical(other.status, status) || other.status == status));
+            (identical(other.status, status) || other.status == status) &&
+            const DeepCollectionEquality().equals(other._data, _data));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, status);
+  int get hashCode => Object.hash(
+      runtimeType, status, const DeepCollectionEquality().hash(_data));
 
   @JsonKey(ignore: true)
   @override
@@ -154,27 +177,28 @@ class _$OnFetchImpl implements _OnFetch {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(FilterStatus status) onFetch,
+    required TResult Function(FilterStatus status, List<UserParams> data)
+        onFetch,
   }) {
-    return onFetch(status);
+    return onFetch(status, data);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(FilterStatus status)? onFetch,
+    TResult? Function(FilterStatus status, List<UserParams> data)? onFetch,
   }) {
-    return onFetch?.call(status);
+    return onFetch?.call(status, data);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(FilterStatus status)? onFetch,
+    TResult Function(FilterStatus status, List<UserParams> data)? onFetch,
     required TResult orElse(),
   }) {
     if (onFetch != null) {
-      return onFetch(status);
+      return onFetch(status, data);
     }
     return orElse();
   }
@@ -209,10 +233,14 @@ class _$OnFetchImpl implements _OnFetch {
 }
 
 abstract class _OnFetch implements UsersEvent {
-  const factory _OnFetch({required final FilterStatus status}) = _$OnFetchImpl;
+  const factory _OnFetch(
+      {required final FilterStatus status,
+      required final List<UserParams> data}) = _$OnFetchImpl;
 
   @override
   FilterStatus get status;
+  @override
+  List<UserParams> get data;
   @override
   @JsonKey(ignore: true)
   _$$OnFetchImplCopyWith<_$OnFetchImpl> get copyWith =>
@@ -226,7 +254,8 @@ mixin _$UsersState {
     required TResult Function() initial,
     required TResult Function(String reason) showMessage,
     required TResult Function() loading,
-    required TResult Function(List<UserParams> data) fetchSuccess,
+    required TResult Function(List<UserParams> data, FilterStatus lastFilter)
+        fetchSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -234,7 +263,8 @@ mixin _$UsersState {
     TResult? Function()? initial,
     TResult? Function(String reason)? showMessage,
     TResult? Function()? loading,
-    TResult? Function(List<UserParams> data)? fetchSuccess,
+    TResult? Function(List<UserParams> data, FilterStatus lastFilter)?
+        fetchSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -242,7 +272,8 @@ mixin _$UsersState {
     TResult Function()? initial,
     TResult Function(String reason)? showMessage,
     TResult Function()? loading,
-    TResult Function(List<UserParams> data)? fetchSuccess,
+    TResult Function(List<UserParams> data, FilterStatus lastFilter)?
+        fetchSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -332,7 +363,8 @@ class _$InitialImpl implements _Initial {
     required TResult Function() initial,
     required TResult Function(String reason) showMessage,
     required TResult Function() loading,
-    required TResult Function(List<UserParams> data) fetchSuccess,
+    required TResult Function(List<UserParams> data, FilterStatus lastFilter)
+        fetchSuccess,
   }) {
     return initial();
   }
@@ -343,7 +375,8 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? initial,
     TResult? Function(String reason)? showMessage,
     TResult? Function()? loading,
-    TResult? Function(List<UserParams> data)? fetchSuccess,
+    TResult? Function(List<UserParams> data, FilterStatus lastFilter)?
+        fetchSuccess,
   }) {
     return initial?.call();
   }
@@ -354,7 +387,8 @@ class _$InitialImpl implements _Initial {
     TResult Function()? initial,
     TResult Function(String reason)? showMessage,
     TResult Function()? loading,
-    TResult Function(List<UserParams> data)? fetchSuccess,
+    TResult Function(List<UserParams> data, FilterStatus lastFilter)?
+        fetchSuccess,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -472,7 +506,8 @@ class _$ShowMessageImpl implements _ShowMessage {
     required TResult Function() initial,
     required TResult Function(String reason) showMessage,
     required TResult Function() loading,
-    required TResult Function(List<UserParams> data) fetchSuccess,
+    required TResult Function(List<UserParams> data, FilterStatus lastFilter)
+        fetchSuccess,
   }) {
     return showMessage(reason);
   }
@@ -483,7 +518,8 @@ class _$ShowMessageImpl implements _ShowMessage {
     TResult? Function()? initial,
     TResult? Function(String reason)? showMessage,
     TResult? Function()? loading,
-    TResult? Function(List<UserParams> data)? fetchSuccess,
+    TResult? Function(List<UserParams> data, FilterStatus lastFilter)?
+        fetchSuccess,
   }) {
     return showMessage?.call(reason);
   }
@@ -494,7 +530,8 @@ class _$ShowMessageImpl implements _ShowMessage {
     TResult Function()? initial,
     TResult Function(String reason)? showMessage,
     TResult Function()? loading,
-    TResult Function(List<UserParams> data)? fetchSuccess,
+    TResult Function(List<UserParams> data, FilterStatus lastFilter)?
+        fetchSuccess,
     required TResult orElse(),
   }) {
     if (showMessage != null) {
@@ -591,7 +628,8 @@ class _$LoadingImpl implements _Loading {
     required TResult Function() initial,
     required TResult Function(String reason) showMessage,
     required TResult Function() loading,
-    required TResult Function(List<UserParams> data) fetchSuccess,
+    required TResult Function(List<UserParams> data, FilterStatus lastFilter)
+        fetchSuccess,
   }) {
     return loading();
   }
@@ -602,7 +640,8 @@ class _$LoadingImpl implements _Loading {
     TResult? Function()? initial,
     TResult? Function(String reason)? showMessage,
     TResult? Function()? loading,
-    TResult? Function(List<UserParams> data)? fetchSuccess,
+    TResult? Function(List<UserParams> data, FilterStatus lastFilter)?
+        fetchSuccess,
   }) {
     return loading?.call();
   }
@@ -613,7 +652,8 @@ class _$LoadingImpl implements _Loading {
     TResult Function()? initial,
     TResult Function(String reason)? showMessage,
     TResult Function()? loading,
-    TResult Function(List<UserParams> data)? fetchSuccess,
+    TResult Function(List<UserParams> data, FilterStatus lastFilter)?
+        fetchSuccess,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -670,7 +710,7 @@ abstract class _$$FetchSuccessImplCopyWith<$Res> {
           _$FetchSuccessImpl value, $Res Function(_$FetchSuccessImpl) then) =
       __$$FetchSuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<UserParams> data});
+  $Res call({List<UserParams> data, FilterStatus lastFilter});
 }
 
 /// @nodoc
@@ -685,12 +725,17 @@ class __$$FetchSuccessImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? data = null,
+    Object? lastFilter = null,
   }) {
     return _then(_$FetchSuccessImpl(
       null == data
           ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
               as List<UserParams>,
+      null == lastFilter
+          ? _value.lastFilter
+          : lastFilter // ignore: cast_nullable_to_non_nullable
+              as FilterStatus,
     ));
   }
 }
@@ -698,7 +743,8 @@ class __$$FetchSuccessImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$FetchSuccessImpl implements _FetchSuccess {
-  const _$FetchSuccessImpl(final List<UserParams> data) : _data = data;
+  const _$FetchSuccessImpl(final List<UserParams> data, this.lastFilter)
+      : _data = data;
 
   final List<UserParams> _data;
   @override
@@ -709,8 +755,11 @@ class _$FetchSuccessImpl implements _FetchSuccess {
   }
 
   @override
+  final FilterStatus lastFilter;
+
+  @override
   String toString() {
-    return 'UsersState.fetchSuccess(data: $data)';
+    return 'UsersState.fetchSuccess(data: $data, lastFilter: $lastFilter)';
   }
 
   @override
@@ -718,12 +767,14 @@ class _$FetchSuccessImpl implements _FetchSuccess {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$FetchSuccessImpl &&
-            const DeepCollectionEquality().equals(other._data, _data));
+            const DeepCollectionEquality().equals(other._data, _data) &&
+            (identical(other.lastFilter, lastFilter) ||
+                other.lastFilter == lastFilter));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_data));
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_data), lastFilter);
 
   @JsonKey(ignore: true)
   @override
@@ -737,9 +788,10 @@ class _$FetchSuccessImpl implements _FetchSuccess {
     required TResult Function() initial,
     required TResult Function(String reason) showMessage,
     required TResult Function() loading,
-    required TResult Function(List<UserParams> data) fetchSuccess,
+    required TResult Function(List<UserParams> data, FilterStatus lastFilter)
+        fetchSuccess,
   }) {
-    return fetchSuccess(data);
+    return fetchSuccess(data, lastFilter);
   }
 
   @override
@@ -748,9 +800,10 @@ class _$FetchSuccessImpl implements _FetchSuccess {
     TResult? Function()? initial,
     TResult? Function(String reason)? showMessage,
     TResult? Function()? loading,
-    TResult? Function(List<UserParams> data)? fetchSuccess,
+    TResult? Function(List<UserParams> data, FilterStatus lastFilter)?
+        fetchSuccess,
   }) {
-    return fetchSuccess?.call(data);
+    return fetchSuccess?.call(data, lastFilter);
   }
 
   @override
@@ -759,11 +812,12 @@ class _$FetchSuccessImpl implements _FetchSuccess {
     TResult Function()? initial,
     TResult Function(String reason)? showMessage,
     TResult Function()? loading,
-    TResult Function(List<UserParams> data)? fetchSuccess,
+    TResult Function(List<UserParams> data, FilterStatus lastFilter)?
+        fetchSuccess,
     required TResult orElse(),
   }) {
     if (fetchSuccess != null) {
-      return fetchSuccess(data);
+      return fetchSuccess(data, lastFilter);
     }
     return orElse();
   }
@@ -807,9 +861,12 @@ class _$FetchSuccessImpl implements _FetchSuccess {
 }
 
 abstract class _FetchSuccess implements UsersState {
-  const factory _FetchSuccess(final List<UserParams> data) = _$FetchSuccessImpl;
+  const factory _FetchSuccess(
+          final List<UserParams> data, final FilterStatus lastFilter) =
+      _$FetchSuccessImpl;
 
   List<UserParams> get data;
+  FilterStatus get lastFilter;
   @JsonKey(ignore: true)
   _$$FetchSuccessImplCopyWith<_$FetchSuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;

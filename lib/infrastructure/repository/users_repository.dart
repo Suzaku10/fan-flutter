@@ -24,7 +24,7 @@ class UsersRepository implements IUsers {
       } else {
         final result = await _store
             .collection(AppStrings.appCollection)
-            .where('isVerified', isEqualTo: filter == FilterStatus.verified)
+            .where('is_verified', isEqualTo: filter == FilterStatus.verified)
             .withConverter<UsersResponses>(fromFirestore: (snapshots, _) => UsersResponses.fromJson(snapshots.data()!), toFirestore: (user, _) => user.toJson())
             .get();
         return result;

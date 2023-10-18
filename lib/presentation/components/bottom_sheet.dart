@@ -1,7 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:fan_flutter/application/auth/auth_bloc.dart';
+import 'package:fan_flutter/domain/constant/app_enum.dart';
 import 'package:fan_flutter/presentation/components/app_buttons.dart';
 import 'package:fan_flutter/presentation/components/app_textfields.dart';
+import 'package:fan_flutter/presentation/components/items/filter_status_item.dart';
 import 'package:fan_flutter/utilities/i10n/l10n.dart';
 import 'package:fan_flutter/utilities/injection/injection.dart';
 import 'package:fan_flutter/utilities/loader.dart';
@@ -67,6 +69,45 @@ class AppBottomSheetWidget {
               ),
             );
           },
+        ),
+      ),
+    );
+  }
+
+  static Future showAccountFilterBottomSheet(BuildContext context, {FilterStatus? lastFilter}) {
+    List<FilterStatus> items = [
+      FilterStatus.verified,
+      FilterStatus.unverified,
+      FilterStatus.all,
+    ];
+
+    FilterStatus selected = lastFilter ?? FilterStatus.all;
+
+    return showModalBottomSheet(
+      shape: const RoundedRectangleBorder(borderRadius: BorderRadius.vertical(top: Radius.circular(25.0))),
+      context: context,
+      builder: (context) => Padding(
+        padding: EdgeInsets.only(top: 20, right: 20, left: 20, bottom: MediaQuery.viewInsetsOf(context).bottom),
+        child: Padding(
+          padding: const EdgeInsets.only(bottom: 16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Flexible(
+                child: FilterStatusItems(
+                  items: items,
+                  lastFilter: lastFilter,
+                  callback: (item) => selected = item,
+                ),
+              ),
+              const SizedBox(height: 10),
+              AppButton.defaults(
+                title: I10n.current.send,
+                onPressed: () => context.router.pop(selected),
+              ),
+            ],
+          ),
         ),
       ),
     );

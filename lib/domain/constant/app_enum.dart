@@ -1,1 +1,1 @@
-enum FilterStatus { verified, none, all }
+enum FilterStatus { verified, unverified, all }

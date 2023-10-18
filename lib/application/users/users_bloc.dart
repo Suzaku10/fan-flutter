@@ -22,7 +22,7 @@ class UsersBloc extends Bloc<UsersEvent, UsersState> {
         emit(const _Loading());
          try {
            final result = await _users.fetchUsers(filter: v.status);
-           emit(UsersState.fetchSuccess(userFromResponses(result)));
+           emit(UsersState.fetchSuccess(userFromResponses(result), v.status));
          } catch (e) {
            emit(_ShowMessage(e.toString()));
          }
